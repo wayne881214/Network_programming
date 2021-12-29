@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
     EditText username, password;
     Button loginButton, abcButton;
     String user, pass;
-    public static String yourDatabaseURL = "https://android-programming-6d05e-default-rtdb.firebaseio.com/";
+    public static String yourDatabaseURL = "https://android-programming-8e632-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
