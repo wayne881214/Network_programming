@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
         abcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, Choose.class));
+                startActivity(new Intent(Login.this,instrument.class));
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +107,7 @@ public class Login extends AppCompatActivity {
                                     else if(obj.getJSONObject(user).getString("password").equals(pass)){
                                         UserDetails.username = user;
                                         UserDetails.password = pass;
-                                        startActivity(new Intent(Login.this, Users.class));
+                                        startActivity(new Intent(Login.this, Choose.class));
                                     }
                                     else {
                                         Toast.makeText(Login.this, "incorrect password", Toast.LENGTH_LONG).show();
