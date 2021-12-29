@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "588617583936",
+    "firebase_url": "https://android-programming-6d05e-default-rtdb.firebaseio.com",
+    "project_id": "android-programming-6d05e",
+    "storage_bucket": "android-programming-6d05e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588617583936:android:9eee4eca4f5585e603fea5",
+        "android_client_info": {
+          "package_name": "com.artest.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588617583936-fe8m41pdrdlmvfqtcm8s2i6e0k5ku1o7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDF_5WzUTCTxYF7JoiEExYMEPkq-ALzJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588617583936-fe8m41pdrdlmvfqtcm8s2i6e0k5ku1o7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
