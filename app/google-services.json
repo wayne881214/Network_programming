@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "588617583936",
-    "firebase_url": "https://android-programming-6d05e-default-rtdb.firebaseio.com",
-    "project_id": "android-programming-6d05e",
-    "storage_bucket": "android-programming-6d05e.appspot.com"
+    "project_number": "246549889300",
+    "firebase_url": "https://android-programming-8e632-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "android-programming-8e632",
+    "storage_bucket": "android-programming-8e632.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:588617583936:android:9eee4eca4f5585e603fea5",
+        "mobilesdk_app_id": "1:246549889300:android:3522845eecd9f7db47c201",
         "android_client_info": {
           "package_name": "com.artest.chatapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "588617583936-fe8m41pdrdlmvfqtcm8s2i6e0k5ku1o7.apps.googleusercontent.com",
+          "client_id": "246549889300-bflvfpahct7ib99tsfih29burdk33447.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.artest.chatapp",
+            "certificate_hash": "db8a4358fff679975aaffa229df556674aebd2d4"
+          }
+        },
+        {
+          "client_id": "246549889300-omd300i2itmvb3csi35n4ep7id474215.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCDF_5WzUTCTxYF7JoiEExYMEPkq-ALzJg"
+          "current_key": "AIzaSyBy7ToVFEQ-uUUpjBJ0sFizbc4FwLi_39Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "588617583936-fe8m41pdrdlmvfqtcm8s2i6e0k5ku1o7.apps.googleusercontent.com",
+              "client_id": "246549889300-omd300i2itmvb3csi35n4ep7id474215.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
