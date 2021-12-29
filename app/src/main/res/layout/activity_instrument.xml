@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Choose">
+    tools:context=".instrument">
 
     <ImageButton
         android:layout_width="195dp"
@@ -14,7 +14,7 @@
         android:layout_x="5dp"
         android:layout_y="360dp"
         android:id="@+id/aButton"
-        android:src="@drawable/user" />
+        android:src="@drawable/eevee" />
 
     <ImageButton
         android:layout_width="195dp"
@@ -22,7 +22,7 @@
         android:layout_x="205dp"
         android:layout_y="360dp"
         android:id="@+id/bButton"
-        android:src="@drawable/instrument" />
+        android:src="@drawable/eevee" />
 
     <ImageButton
         android:layout_width="195dp"

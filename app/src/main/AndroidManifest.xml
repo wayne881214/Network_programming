@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatapp">
         <activity
+            android:name=".instrument"
+            android:exported="false" />
+        <activity
             android:name=".Choose"
             android:exported="false" />
         <activity
