@@ -32,7 +32,7 @@ public class Choose extends AppCompatActivity {
         c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Choose.this, instrument.class));
+                startActivity(new Intent(Choose.this, Room.class));
             }
         });
         d.setOnClickListener(new View.OnClickListener() {

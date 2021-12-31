@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
         abcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this,instrument.class));
+                startActivity(new Intent(Login.this,Room.class));
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
