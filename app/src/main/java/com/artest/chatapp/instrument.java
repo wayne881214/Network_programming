@@ -2,17 +2,6 @@ package com.artest.chatapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
-import android.os.Bundle;
-
-public class instrument extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instrument);
-    }
-=======
 import android.content.Intent;
 
 
@@ -73,5 +62,4 @@ public class instrument extends AppCompatActivity {
         });
     }
 
->>>>>>> eebc1a3bd3b5ca238e026e24178767bdc409aefd
 }

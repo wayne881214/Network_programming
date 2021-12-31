@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-=======
 <AbsoluteLayout  xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> eebc1a3bd3b5ca238e026e24178767bdc409aefd
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".instrument">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".instrument">
@@ -22,7 +13,7 @@
         android:layout_height="350dp"
         android:layout_x="5dp"
         android:layout_y="360dp"
-        android:id="@+id/aButton"
+        android:id="@+id/cButton"
         android:src="@drawable/eevee" />
 
     <ImageButton
@@ -30,7 +21,7 @@
         android:layout_height="350dp"
         android:layout_x="205dp"
         android:layout_y="360dp"
-        android:id="@+id/bButton"
+        android:id="@+id/dButton"
         android:src="@drawable/eevee" />
 
     <ImageButton
@@ -38,7 +29,7 @@
         android:layout_height="350dp"
         android:layout_x="205dp"
         android:layout_y="5dp"
-        android:id="@+id/cButton"
+        android:id="@+id/bButton"
         android:src="@drawable/eevee" />
 
     <ImageButton
@@ -46,9 +37,8 @@
         android:layout_height="350dp"
         android:layout_x="5dp"
         android:layout_y="5dp"
-        android:id="@+id/dButton"
+        android:id="@+id/aButton"
         android:src="@drawable/eevee" />
 
 
 </AbsoluteLayout >
->>>>>>> eebc1a3bd3b5ca238e026e24178767bdc409aefd
