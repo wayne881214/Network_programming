@@ -38,7 +38,7 @@ public class Choose extends AppCompatActivity {
         d.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Choose.this, Users.class));
+                startActivity(new Intent(Choose.this, Order.class));
             }
         });
     }

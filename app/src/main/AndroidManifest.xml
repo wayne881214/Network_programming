@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatapp">
         <activity
+            android:name=".OrderDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Order"
+            android:exported="false" />
+        <activity
             android:name=".Room"
             android:exported="false" />
         <activity
