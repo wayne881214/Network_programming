@@ -4,9 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import pl.droidsonroids.gif.GifDrawable;
-import pl.droidsonroids.gif.GifImageView;
 
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
+import pl.droidsonroids.gif.GifDrawable;
+
+import org.json.JSONObject;
+import pl.droidsonroids.gif.GifImageView;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -361,5 +365,4 @@ public class Chat extends AppCompatActivity {
             // display error state to the user
         }
     }
-
 }

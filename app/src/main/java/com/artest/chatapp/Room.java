@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
@@ -108,6 +111,7 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String messageText = UserDetails.username+" : "+messageArea.getText().toString();
+                //String messageText=API();
                 messageArea.setText("");
                 if (!messageText.equals("")) {
                     Map<String, String> map = new HashMap<String, String>();
@@ -358,5 +362,16 @@ public class Room extends AppCompatActivity {
             // display error state to the user
         }
     }
+    /*public  String API() {
+        HttpResponse<String> response = Unirest.post("https://waifu.p.rapidapi.com/path?user_id=sample_user_id&message=Hi&from_name=Boy&to_name=Girl&situation=Girl%20loves%20Boy.&translate_from=auto&translate_to=auto")
+                .header("content-type", "application/json")
+                .header("x-rapidapi-host", "waifu.p.rapidapi.com")
+                .header("x-rapidapi-key", "6abd603876msh0f062f898da1676p10251ejsncea0420493f9")
+                .body("{}")
+                .asString();
+        String str = response.getBody();
+        Unirest.shutDown();
+        return str;
+    }*/
 
 }
