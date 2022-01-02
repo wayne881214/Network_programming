@@ -23,6 +23,6 @@ public class OrderDetails extends AppCompatActivity {
         price_bd = bundle.getInt("price");
 
         listView.setText(list_choice);
-        priceView.setText(price_bd.toString()+" 元");
+        priceView.setText("總計: "+price_bd.toString()+" 元");
     }
 }

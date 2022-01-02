@@ -27,24 +27,24 @@ public class Order extends AppCompatActivity {
 
     public void add_to_list(View v){
         if(v == findViewById(R.id.pizzaButton)){
-            choices = choices + "披薩 (1元) X1" + "\n";
-            price = price + 1;
+            choices = choices + "披薩 (50元) X1" + "\n";
+            price = price + 50;
         }
         else if(v == findViewById(R.id.burgerButton)){
-            choices = choices + "漢堡 (2元) X1" + "\n";
-            price = price + 2;
+            choices = choices + "漢堡 (45元) X1" + "\n";
+            price = price + 45;
         }
         else if(v == findViewById(R.id.colaButton)){
-            choices = choices + "可樂 (3元) X1" + "\n";
-            price = price + 3;
+            choices = choices + "可樂 (25元) X1" + "\n";
+            price = price + 25;
         }
         else if(v == findViewById(R.id.frenchfriesButton)){
-            choices = choices + "薯條 (4元) X1" + "\n";
-            price = price + 4;
+            choices = choices + "薯條 (30元) X1" + "\n";
+            price = price + 30;
         }
         else if(v == findViewById(R.id.friedchickenButton)){
-            choices = choices + "炸雞 (5元) X1" + "\n";
-            price = price + 5;
+            choices = choices + "炸雞 (40元) X1" + "\n";
+            price = price + 40;
         }
     }
 
