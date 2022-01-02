@@ -5,10 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import kong.unirest.HttpResponse;
-import kong.unirest.Unirest;
+import java.sql.Statement;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.IOException;
+import java.util.Map;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -71,7 +88,6 @@ import static com.artest.chatapp.Login.yourDatabaseURL;
 
 
 public class Room extends AppCompatActivity {
-
     LinearLayout layout;
     ImageView sendButton;
     ImageView sendPicture;
@@ -363,14 +379,20 @@ public class Room extends AppCompatActivity {
         }
     }
     /*public  String API() {
-        HttpResponse<String> response = Unirest.post("https://waifu.p.rapidapi.com/path?user_id=sample_user_id&message=Hi&from_name=Boy&to_name=Girl&situation=Girl%20loves%20Boy.&translate_from=auto&translate_to=auto")
-                .header("content-type", "application/json")
-                .header("x-rapidapi-host", "waifu.p.rapidapi.com")
-                .header("x-rapidapi-key", "6abd603876msh0f062f898da1676p10251ejsncea0420493f9")
-                .body("{}")
-                .asString();
-        String str = response.getBody();
-        Unirest.shutDown();
+        String str="123";
+        try {
+            OkHttpClient client = new OkHttpClient();
+
+            Request request = new Request.Builder()
+                    .url("https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666")
+                    .get()
+                    .addHeader("x-rapidapi-host", "imdb-internet-movie-database-unofficial.p.rapidapi.com")
+                    .addHeader("x-rapidapi-key", "6abd603876msh0f062f898da1676p10251ejsncea0420493f9")
+                    .build();
+            Response response = client.newCall(request).execute();
+            str = response.body().string();
+        } catch(IOException e){
+        }
         return str;
     }*/
 

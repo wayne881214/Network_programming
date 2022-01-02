@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import kong.unirest.HttpResponse;
-import kong.unirest.Unirest;
+
 import pl.droidsonroids.gif.GifDrawable;
 
 import org.json.JSONObject;

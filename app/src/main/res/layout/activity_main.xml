@@ -55,11 +55,5 @@
         android:gravity="center"
         android:id="@+id/register"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="abc"
-        android:id="@+id/abcButton"
-        android:layout_marginBottom="20dp"/>
 
 </LinearLayout >

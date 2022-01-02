@@ -33,8 +33,13 @@
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_chat.xml" value="0.17300724637681159" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_choose.xml" value="0.14322916666666666" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_instrument.xml" value="0.14322916666666666" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_main.xml" value="0.1359375" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_music.xml" value="0.1793478260869565" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_order_details.xml" value="0.1359375" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_register.xml" value="0.1359375" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_room.xml" value="0.17300724637681159" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_user.xml" value="0.1359375" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/custom_notification.xml" value="0.1359375" />
       </map>
     </option>
   </component>

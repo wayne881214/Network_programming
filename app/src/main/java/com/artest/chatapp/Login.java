@@ -37,7 +37,7 @@ import static com.artest.chatapp.Register.SHA1;
 public class Login extends AppCompatActivity {
     TextView register;
     EditText username, password;
-    Button loginButton, abcButton;
+    Button loginButton;
     String user, pass;
     public static String yourDatabaseURL = "https://android-programming-8e632-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
@@ -52,18 +52,11 @@ public class Login extends AppCompatActivity {
         username = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
         loginButton = (Button)findViewById(R.id.loginButton);
-        abcButton = (Button)findViewById(R.id.abcButton);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this, Register.class));
-            }
-        });
-        abcButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this,Room.class));
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
