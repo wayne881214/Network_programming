@@ -16,9 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatapp">
         <activity
+            android:name=".soundelse"
+            android:exported="false" />
+        <activity
+            android:name=".addmusic"
+            android:exported="false" />
+        <activity
+            android:name=".ordermusic"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
-
         <activity
             android:name=".OrderDetails"
             android:exported="false" />
@@ -45,7 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".Start"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

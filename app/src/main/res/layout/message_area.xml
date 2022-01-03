@@ -32,7 +32,13 @@
         android:padding="8dp"
         android:src="@android:drawable/ic_menu_camera"
         android:id="@+id/takePicture"/>
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_menu_add"
+        android:id="@+id/musicButton"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

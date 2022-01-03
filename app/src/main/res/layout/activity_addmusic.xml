@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".addmusic"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".Login">
-    
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/testImage"
-    />
+    android:gravity="center">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="SONG"
         android:textSize="30dp"
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
@@ -28,37 +22,31 @@
         android:id="@+id/username"
         android:inputType="text"
         android:maxLines="1"
-        android:hint="enter username"
+        android:hint="輸入歌曲名稱"
         android:layout_marginBottom="10dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:maxLines="1"
-        android:hint="enter password"
+        android:hint="輸入歌手"
         android:layout_marginBottom="10dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/loginButton"
+        android:text="Register"
+        android:id="@+id/registerButton"
         android:layout_marginBottom="20dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="test"
-        android:id="@+id/testButton"
-        android:layout_marginBottom="20dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click here to register"
+        android:text="Click here to login"
         android:textSize="20dp"
         android:gravity="center"
-        android:id="@+id/register"/>
+        android:id="@+id/login"/>
 
-
-</LinearLayout >
+</LinearLayout>

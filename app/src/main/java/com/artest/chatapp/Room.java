@@ -92,6 +92,7 @@ public class Room extends AppCompatActivity {
     ImageView sendButton;
     ImageView sendPicture;
     ImageView takePicture;
+    ImageView musicButton;
     EditText messageArea;
     ScrollView scrollView;
     Firebase reference1, reference2;
@@ -116,17 +117,36 @@ public class Room extends AppCompatActivity {
         takePicture = (ImageView)findViewById(R.id.takePicture);
         messageArea = (EditText) findViewById(R.id.messageArea);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
-
+        musicButton=(ImageView)findViewById(R.id.musicButton);
         //取得firebase storage
         storage = FirebaseStorage.getInstance();
 
         Firebase.setAndroidContext(this);
         reference1 = new Firebase(yourDatabaseURL+"messages/" +"VIP1");
+        if(MusicDetails.songname!=""){
+            String messageText = "Robot:\n"+MusicDetails.songname+" 點歌成功";
+            //String messageText=API();
+            messageArea.setText("");
+            MusicDetails.songname="";
+            if (!messageText.equals("")) {
+                Map<String, String> map = new HashMap<String, String>();
+                try {
+                    final byte[] textByte = messageText.getBytes("UTF-8");
+                    final String encodedText = encoder.encodeToString(textByte);
+                    map.put("message", encodedText);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+//                    map.put("message", messageText);
+                map.put("user", "robot");
+                reference1.push().setValue(map);
+            }
 
+        }
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String messageText = UserDetails.username+" : "+messageArea.getText().toString();
+                String messageText = UserDetails.username+":\n"+messageArea.getText().toString();
                 //String messageText=API();
                 messageArea.setText("");
                 if (!messageText.equals("")) {
@@ -147,6 +167,11 @@ public class Room extends AppCompatActivity {
         takePicture.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 openCamera();
+            }
+        });
+        musicButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(Room.this, ordermusic.class));
             }
         });
         //傳送圖片
