@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, addmusic.class));
+                startActivity(new Intent(Login.this, soundelse.class));
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
