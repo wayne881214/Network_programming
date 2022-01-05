@@ -122,7 +122,7 @@ public class Room extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
 
         Firebase.setAndroidContext(this);
-        reference1 = new Firebase(yourDatabaseURL+"messages/" +"VIP1");
+        reference1 = new Firebase(yourDatabaseURL+"messages/" +UserDetails.Room);
         if(MusicDetails.songname!=""){
             String messageText = "Robot:\n"+MusicDetails.songname+" 點歌成功";
             //String messageText=API();
@@ -138,10 +138,9 @@ public class Room extends AppCompatActivity {
                     e.printStackTrace();
                 }
 //                    map.put("message", messageText);
-                map.put("user", "robot");
+                map.put("user", "Robot");
                 reference1.push().setValue(map);
             }
-
         }
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -259,7 +258,7 @@ public class Room extends AppCompatActivity {
             textView.setText(message);
             if (type == 1) {
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(850, 10, 20, 20);
+                lp.setMargins(750, 10, 20, 20);
                 textView.setLayoutParams(lp);
             } else {
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);

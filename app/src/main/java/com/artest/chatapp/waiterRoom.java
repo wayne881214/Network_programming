@@ -5,11 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-
+import java.sql.Statement;
 import pl.droidsonroids.gif.GifDrawable;
-
-import org.json.JSONObject;
 import pl.droidsonroids.gif.GifImageView;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.IOException;
+import java.util.Map;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -70,12 +87,12 @@ import java.util.Base64;
 import static com.artest.chatapp.Login.yourDatabaseURL;
 
 
-public class Chat extends AppCompatActivity {
-
+public class waiterRoom extends AppCompatActivity {
     LinearLayout layout;
     ImageView sendButton;
     ImageView sendPicture;
     ImageView takePicture;
+    ImageView musicButton;
     EditText messageArea;
     ScrollView scrollView;
     Firebase reference1, reference2;
@@ -92,7 +109,7 @@ public class Chat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_waiter_room);
 
         layout = (LinearLayout) findViewById(R.id.layout1);
         sendButton = (ImageView) findViewById(R.id.sendButton);
@@ -100,20 +117,22 @@ public class Chat extends AppCompatActivity {
         takePicture = (ImageView)findViewById(R.id.takePicture);
         messageArea = (EditText) findViewById(R.id.messageArea);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
-
+        musicButton=(ImageView)findViewById(R.id.musicButton);
         //取得firebase storage
         storage = FirebaseStorage.getInstance();
 
         Firebase.setAndroidContext(this);
-        reference1 = new Firebase(yourDatabaseURL+"messages/" + UserDetails.username + "_" + UserDetails.chatWith);
-        reference2 = new Firebase(yourDatabaseURL+"messages/" + UserDetails.chatWith + "_" + UserDetails.username);
-
+        reference1 = new Firebase(yourDatabaseURL+"messages/" +UserDetails.Room);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String messageText = messageArea.getText().toString();
+                String messageText = "公告:\n"+messageArea.getText().toString();
+                //String messageText=API();
                 messageArea.setText("");
-                if (!messageText.equals("")) {
+                if (messageText.equals("公告:\n清空")) {
+                reference1.removeValue();
+                }
+                else if (!messageText.equals("")) {
                     Map<String, String> map = new HashMap<String, String>();
                     try {
                         final byte[] textByte = messageText.getBytes("UTF-8");
@@ -123,15 +142,19 @@ public class Chat extends AppCompatActivity {
                         e.printStackTrace();
                     }
 //                    map.put("message", messageText);
-                    map.put("user", UserDetails.username);
+                    map.put("user", "Robot");
                     reference1.push().setValue(map);
-                    reference2.push().setValue(map);
                 }
             }
         });
         takePicture.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 openCamera();
+            }
+        });
+        musicButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                //startActivity(new Intent(waiterRoom.this, ordermusic.class));
             }
         });
         //傳送圖片
@@ -153,10 +176,10 @@ public class Chat extends AppCompatActivity {
                 String message = map.get("message").toString();
                 String userName = map.get("user").toString();
 
-                if (userName.equals(UserDetails.username)) {
-                    addMessageBox("You:\n", message, 1);
+                if (userName.equals("Robot")) {
+                    addMessageBox("", message, 1);
                 } else {
-                    addMessageBox(UserDetails.chatWith + ":\n", message, 2);
+                    //addMessageBox("", message, 2);
                 }
             }
 
@@ -190,7 +213,7 @@ public class Chat extends AppCompatActivity {
 
         }
         if (original.indexOf("https:") > -1 && message.indexOf("firebase") > -1) {
-            GifImageView imageView = new GifImageView(Chat.this);
+            GifImageView imageView = new GifImageView(waiterRoom.this);
             if(original.indexOf(".gif")>-1){
                 Glide.with(this).load(original)
                         .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).into(imageView);
@@ -215,7 +238,7 @@ public class Chat extends AppCompatActivity {
             layout.addView(imageView);
             scrollView.fullScroll(View.FOCUS_DOWN);
         } else {
-            TextView textView = new TextView(Chat.this);
+            TextView textView = new TextView(waiterRoom.this);
             textView.setText(message);
             if (type == 1) {
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -333,7 +356,6 @@ public class Chat extends AppCompatActivity {
                         //map.put("message", String.valueOf(downloadUri));
                         map.put("user", UserDetails.username);
                         reference1.push().setValue(map);
-                        reference2.push().setValue(map);
 
                     } else {
 
@@ -364,4 +386,22 @@ public class Chat extends AppCompatActivity {
             // display error state to the user
         }
     }
+    /*public  String API() {
+        String str="123";
+        try {
+            OkHttpClient client = new OkHttpClient();
+
+            Request request = new Request.Builder()
+                    .url("https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666")
+                    .get()
+                    .addHeader("x-rapidapi-host", "imdb-internet-movie-database-unofficial.p.rapidapi.com")
+                    .addHeader("x-rapidapi-key", "6abd603876msh0f062f898da1676p10251ejsncea0420493f9")
+                    .build();
+            Response response = client.newCall(request).execute();
+            str = response.body().string();
+        } catch(IOException e){
+        }
+        return str;
+    }
+*/
 }

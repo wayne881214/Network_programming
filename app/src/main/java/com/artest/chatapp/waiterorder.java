@@ -19,6 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.artest.chatapp.MusicDetails;
+import com.artest.chatapp.R;
+import com.artest.chatapp.Room;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,27 +33,28 @@ import android.os.Bundle;
 
 import static com.artest.chatapp.Login.yourDatabaseURL;
 
-public class Users extends AppCompatActivity {
+public class waiterorder extends AppCompatActivity {
 
-    ListView usersList;
+    ListView usersList,singersList;
     TextView noUsersText;
     ArrayList<String> al = new ArrayList<>();
+    ArrayList<String> bl = new ArrayList<>();
     int totalUsers = 0;
     ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
-
+        setContentView(R.layout.activity_waiterorder);
+        singersList= (ListView)findViewById(R.id.singersList);
         usersList = (ListView)findViewById(R.id.usersList);
         noUsersText = (TextView)findViewById(R.id.noUsersText);
 
-        pd = new ProgressDialog(Users.this);
+        pd = new ProgressDialog(com.artest.chatapp.waiterorder.this);
         pd.setMessage("Loading...");
         pd.show();
 
-        String url = yourDatabaseURL+"waiters.json";
+        String url = yourDatabaseURL+"order.json";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
             @Override
@@ -64,19 +68,19 @@ public class Users extends AppCompatActivity {
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(Users.this);
+        RequestQueue rQueue = Volley.newRequestQueue(com.artest.chatapp.waiterorder.this);
         rQueue.add(request);
 
         usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UserDetails.chatWith = al.get(position);
-                startActivity(new Intent(Users.this, Chat.class));
+                startActivity(new Intent(com.artest.chatapp.waiterorder.this, waiterChoose.class));
             }
         });
     }
 
     public void doOnSuccess(String s){
+        String total="";
         try {
             JSONObject obj = new JSONObject(s);
 
@@ -85,17 +89,16 @@ public class Users extends AppCompatActivity {
 
             while(i.hasNext()){
                 key = i.next().toString();
-
-                if(!key.equals(UserDetails.username)) {
-                    al.add(key);
-                }
+                total=obj.getJSONObject(key).getString("total");
+                al.add(key);
+                bl.add(total);
                 totalUsers++;
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        if(totalUsers <=1){
+        if(totalUsers <1){
             noUsersText.setVisibility(View.VISIBLE);
             usersList.setVisibility(View.GONE);
         }
@@ -103,6 +106,7 @@ public class Users extends AppCompatActivity {
             noUsersText.setVisibility(View.GONE);
             usersList.setVisibility(View.VISIBLE);
             usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
+            singersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, bl));
         }
         pd.dismiss();
     }

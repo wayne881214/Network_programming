@@ -31,17 +31,17 @@ import java.security.NoSuchAlgorithmException;
 
 import static com.artest.chatapp.Login.yourDatabaseURL;
 
-public class addmusic extends AppCompatActivity {
+public class addRoom extends AppCompatActivity {
 
     EditText username, password;
     Button registerButton;
-    String user, singer;
+    String user,  pass ;
     TextView login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addmusic);
+        setContentView(R.layout.activity_add_room);
 
         username = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
@@ -52,7 +52,7 @@ public class addmusic extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(addmusic.this, waiterChoose.class));
+                startActivity(new Intent(addRoom.this, waiterChoose.class));
             }
         });
 
@@ -60,39 +60,39 @@ public class addmusic extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 user = username.getText().toString();
-                singer = password.getText().toString();
+                pass = password.getText().toString();
 
                 if(user.equals("")){
                     username.setError("can't be blank");
                 }
-                else if(singer.equals("")){
+                else if(pass.equals("")){
                     password.setError("can't be blank");
                 }
                 else {
-                    final ProgressDialog pd = new ProgressDialog(addmusic.this);
+                    final ProgressDialog pd = new ProgressDialog(addRoom.this);
                     pd.setMessage("Loading...");
                     pd.show();
 
-                    String url = yourDatabaseURL+"songs.json";
+                    String url = yourDatabaseURL+"room.json";
 
                     StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
                         @Override
                         public void onResponse(String s) {
-                            Firebase reference = new Firebase(yourDatabaseURL+"songs");
+                            Firebase reference = new Firebase(yourDatabaseURL+"room");
 
                             if(s.equals("null")) {
-                                    reference.child(user).child("singer").setValue(singer);
-                                    Toast.makeText(addmusic.this, "registration successful", Toast.LENGTH_LONG).show();
+                                reference.child(user).child("password").setValue(pass);
+                                Toast.makeText(addRoom.this, "update successful", Toast.LENGTH_LONG).show();
                             }
                             else {
                                 try {
                                     JSONObject obj = new JSONObject(s);
                                     if (!obj.has(user)) {
-                                            reference.child(user).child("singer").setValue(singer);
-                                            Toast.makeText(addmusic.this, "registration successful", Toast.LENGTH_LONG).show();
+                                        reference.child(user).child("singer").setValue(pass);
+                                        Toast.makeText(addRoom.this, "update successful", Toast.LENGTH_LONG).show();
 
                                     } else {
-                                        Toast.makeText(addmusic.this, "Song already exists", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(addRoom.this, "Room already exists", Toast.LENGTH_LONG).show();
                                     }
 
                                 } catch (JSONException e) {
@@ -111,7 +111,7 @@ public class addmusic extends AppCompatActivity {
                         }
                     });
 
-                    RequestQueue rQueue = Volley.newRequestQueue(addmusic.this);
+                    RequestQueue rQueue = Volley.newRequestQueue(addRoom.this);
                     rQueue.add(request);
                 }
             }

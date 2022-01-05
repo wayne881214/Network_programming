@@ -5,31 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ordermusic">
+    tools:context=".waiterRoomnumber">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="歌單" />
+        android:text="房號" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No users found!"
+        android:text="No Room found!"
         android:id="@+id/noUsersText"
         android:visibility="gone"/>
-    <LinearLayout
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/usersList"/>
 
-        <ListView
-            android:id="@+id/usersList"
-            android:layout_width="315dp"
-            android:layout_height="601dp" />
-
-        <ListView
-            android:id="@+id/singersList"
-            android:layout_width="248dp"
-            android:layout_height="match_parent" />
-    </LinearLayout>
 
 </LinearLayout>
