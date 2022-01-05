@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatapp">
         <activity
+            android:name=".Start"
+            android:exported="false" />
+        <activity
             android:name=".waiterorder"
             android:exported="false" />
         <activity
@@ -79,8 +82,9 @@
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".Start"
+            android:name=".Into"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
