@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ordermusic">
+    tools:context=".waiterorder">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="歌單" />
+        android:text="明細" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No users found!"
+        android:text="No orders found!"
         android:id="@+id/noUsersText"
         android:visibility="gone"/>
     <LinearLayout

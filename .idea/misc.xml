@@ -36,9 +36,11 @@
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15208333333333332" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/drawable/rounded_corner1.xml" value="0.15208333333333332" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/drawable/rounded_corner2.xml" value="0.15208333333333332" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_add_room.xml" value="0.24791666666666667" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_addmusic.xml" value="0.1359375" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_chat.xml" value="0.17300724637681159" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_choose.xml" value="0.14322916666666666" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_customer.xml" value="0.2625" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_instrument.xml" value="0.14322916666666666" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_main.xml" value="0.1359375" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_music.xml" value="0.1793478260869565" />
@@ -47,9 +49,16 @@
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_ordermusic.xml" value="0.2625" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_register.xml" value="0.1359375" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_room.xml" value="0.17300724637681159" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_roomnumber.xml" value="0.2625" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_soundelse.xml" value="0.2625" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_start.xml" value="0.2625" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_user.xml" value="0.1359375" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_waiter_chat.xml" value="0.2625" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_waiter_choose.xml" value="0.2625" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_waiter_room.xml" value="0.2625" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_waiter_roomnumber.xml" value="0.24791666666666667" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_waiterlogin.xml" value="0.2625" />
+        <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/activity_waiterorder.xml" value="0.2625" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/custom_notification.xml" value="0.1359375" />
         <entry key="..\:/user/Desktop/Network_programming/app/src/main/res/layout/message_area.xml" value="0.2625" />
       </map>

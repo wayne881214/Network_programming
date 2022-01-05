@@ -16,6 +16,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatapp">
         <activity
+            android:name=".waiterorder"
+            android:exported="false" />
+        <activity
+            android:name=".waiterRoomnumber"
+            android:exported="false" />
+        <activity
+            android:name=".addRoom"
+            android:exported="false" />
+        <activity
+            android:name=".Roomnumber"
+            android:exported="false" />
+        <activity
+            android:name=".waiterRoom"
+            android:exported="false" />
+        <activity
+            android:name=".Customer"
+            android:exported="false" />
+        <activity
+            android:name=".waiterChat"
+            android:exported="false" />
+        <activity
+            android:name=".waiterChoose"
+            android:exported="false" />
+        <activity
+            android:name=".waiterlogin"
+            android:exported="false" />
+        <activity
             android:name=".soundelse"
             android:exported="false" />
         <activity

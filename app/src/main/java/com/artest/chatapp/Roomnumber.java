@@ -30,7 +30,7 @@ import android.os.Bundle;
 
 import static com.artest.chatapp.Login.yourDatabaseURL;
 
-public class Users extends AppCompatActivity {
+public class Roomnumber extends AppCompatActivity {
 
     ListView usersList;
     TextView noUsersText;
@@ -41,16 +41,16 @@ public class Users extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_roomnumber);
 
         usersList = (ListView)findViewById(R.id.usersList);
         noUsersText = (TextView)findViewById(R.id.noUsersText);
 
-        pd = new ProgressDialog(Users.this);
+        pd = new ProgressDialog(Roomnumber.this);
         pd.setMessage("Loading...");
         pd.show();
 
-        String url = yourDatabaseURL+"waiters.json";
+        String url = yourDatabaseURL+"room.json";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
             @Override
@@ -64,14 +64,14 @@ public class Users extends AppCompatActivity {
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(Users.this);
+        RequestQueue rQueue = Volley.newRequestQueue(Roomnumber.this);
         rQueue.add(request);
 
         usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UserDetails.chatWith = al.get(position);
-                startActivity(new Intent(Users.this, Chat.class));
+                UserDetails.Room = al.get(position);
+                startActivity(new Intent(Roomnumber.this, Choose.class));
             }
         });
     }

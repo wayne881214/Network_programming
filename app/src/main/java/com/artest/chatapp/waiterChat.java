@@ -70,7 +70,7 @@ import java.util.Base64;
 import static com.artest.chatapp.Login.yourDatabaseURL;
 
 
-public class Chat extends AppCompatActivity {
+public class waiterChat extends AppCompatActivity {
 
     LinearLayout layout;
     ImageView sendButton;
@@ -92,7 +92,7 @@ public class Chat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_waiter_chat);
 
         layout = (LinearLayout) findViewById(R.id.layout1);
         sendButton = (ImageView) findViewById(R.id.sendButton);
@@ -190,7 +190,7 @@ public class Chat extends AppCompatActivity {
 
         }
         if (original.indexOf("https:") > -1 && message.indexOf("firebase") > -1) {
-            GifImageView imageView = new GifImageView(Chat.this);
+            GifImageView imageView = new GifImageView(waiterChat.this);
             if(original.indexOf(".gif")>-1){
                 Glide.with(this).load(original)
                         .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).into(imageView);
@@ -215,7 +215,7 @@ public class Chat extends AppCompatActivity {
             layout.addView(imageView);
             scrollView.fullScroll(View.FOCUS_DOWN);
         } else {
-            TextView textView = new TextView(Chat.this);
+            TextView textView = new TextView(waiterChat.this);
             textView.setText(message);
             if (type == 1) {
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
