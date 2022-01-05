@@ -43,12 +43,10 @@ public class OrderDetails extends AppCompatActivity {
         list_choice = bundle.getString("choices");
         price_bd = bundle.getInt("price");
         Firebase.setAndroidContext(this);
-        reference = new Firebase(yourDatabaseURL+"order/" + UserDetails.Room);
+        reference = new Firebase(yourDatabaseURL+"order");
         Map<String, String> map = new HashMap<String, String>();
-        map.put("money", price_bd.toString());
-        map.put("total", list_choice);
-        reference.push().setValue(map);
-
+        reference.child(UserDetails.Room).child("total").setValue(list_choice);
+        reference.child(UserDetails.Room).child("pricce").setValue(price_bd.toString());
         listView.setText(list_choice);
         priceView.setText("總計: "+price_bd.toString()+" 元");
 

@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.artest.chatapp.MusicDetails;
 import com.artest.chatapp.R;
 import com.artest.chatapp.Room;
+import com.firebase.client.Firebase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,9 +30,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import android.os.Bundle;
 
 import static com.artest.chatapp.Login.yourDatabaseURL;
+
 
 public class waiterorder extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class waiterorder extends AppCompatActivity {
     ArrayList<String> bl = new ArrayList<>();
     int totalUsers = 0;
     ProgressDialog pd;
-
+    Firebase reference1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,28 +71,30 @@ public class waiterorder extends AppCompatActivity {
 
         RequestQueue rQueue = Volley.newRequestQueue(com.artest.chatapp.waiterorder.this);
         rQueue.add(request);
-
-        usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        Firebase.setAndroidContext(this);
+        singersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(com.artest.chatapp.waiterorder.this, waiterChoose.class));
+                UserDetails.Room=al.get(position);
+                reference1 = new Firebase(yourDatabaseURL+"order/"+UserDetails.Room);
+                reference1.removeValue();
+                startActivity(new Intent(com.artest.chatapp.waiterorder.this, waiterorder.class));
             }
         });
     }
 
     public void doOnSuccess(String s){
-        String total="";
+
         try {
             JSONObject obj = new JSONObject(s);
 
             Iterator i = obj.keys();
             String key = "";
-
             while(i.hasNext()){
                 key = i.next().toString();
-                total=obj.getJSONObject(key).getString("total");
+                String singer=obj.getJSONObject(key).getString("total");
                 al.add(key);
-                bl.add(total);
+                bl.add(singer);
                 totalUsers++;
             }
         } catch (JSONException e) {
@@ -105,8 +108,8 @@ public class waiterorder extends AppCompatActivity {
         else{
             noUsersText.setVisibility(View.GONE);
             usersList.setVisibility(View.VISIBLE);
-            usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
-            singersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, bl));
+            usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, bl));
+            singersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
         }
         pd.dismiss();
     }

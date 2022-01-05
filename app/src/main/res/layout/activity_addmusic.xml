@@ -48,5 +48,18 @@
         android:textSize="20dp"
         android:gravity="center"
         android:id="@+id/login"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="---------"
+        android:textSize="20dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Addroom"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:id="@+id/room"/>
 
 </LinearLayout>

@@ -36,7 +36,7 @@ public class addmusic extends AppCompatActivity {
     EditText username, password;
     Button registerButton;
     String user, singer;
-    TextView login;
+    TextView login,room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,15 @@ public class addmusic extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         registerButton = (Button)findViewById(R.id.registerButton);
         login = (TextView)findViewById(R.id.login);
+        room = (TextView)findViewById(R.id.room);
 
         Firebase.setAndroidContext(this);
+        room.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(addmusic.this,addRoom.class));
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
