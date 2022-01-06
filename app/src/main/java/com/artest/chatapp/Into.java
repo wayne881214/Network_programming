@@ -31,7 +31,7 @@ public class Into extends AppCompatActivity {
                 super.run();
                 try{
                     Thread.sleep(6000);
-                    Intent intent = new Intent(Into.this, Login.class);
+                    Intent intent = new Intent(Into.this, Welcome.class);
                     startActivity(intent);
                 } catch (InterruptedException e){
                     e.printStackTrace();
