@@ -7,6 +7,12 @@
     tools:context=".addmusic"
     android:orientation="vertical"
     android:gravity="center">
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:lottie_rawRes="@raw/addmusic"/>
 
     <TextView
         android:layout_width="match_parent"

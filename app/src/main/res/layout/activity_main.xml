@@ -7,13 +7,14 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".Login">
-    
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/testImage"
-    />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:lottie_rawRes="@raw/hello"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,24 +48,19 @@
         android:id="@+id/loginButton"
         android:layout_marginBottom="20dp"/>
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/register"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Click here to register"
+        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Click here to register"
-            android:textSize="20dp" />
-
-
-    </LinearLayout >
     <Button
         android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:text="服務生登入" />
+
 </LinearLayout >
